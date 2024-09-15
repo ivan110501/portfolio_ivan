@@ -75,7 +75,7 @@ const Gallery = () => {
     <>
       <h1>Gallery</h1>
       <hr />
-      <h3>Click on item to see color or to delete it</h3>
+      <h3>Click on item to see the color or to delete it</h3>
       <div className="gallery">
         {data.map((fruit) => {
           return (
