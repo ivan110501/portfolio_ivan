@@ -7,19 +7,19 @@ export const vjezbeLinks: LinkType[] = [
   },
 
   {
-    label: "Gallery - Fruits",
+    label: "Gallery - Fruits (Javascript and object manipulation)",
     href: "/gallery",
   },
   {
-    label: "Movie Tabs",
+    label: "Movie Tabs (Javascript & CSS)",
     href: "/tabs",
   },
   {
-    label: "Games Archive",
+    label: "Games Archive (Routes and objects)",
     href: "/games",
   },
   {
-    label: "Cars SCSS",
+    label: "Cars SCSS (Use of advanced SCSS)",
     href: "/cars",
   },
 ];
