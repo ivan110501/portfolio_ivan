@@ -19,7 +19,7 @@ type ActivePokemonType = {
   };
 };
 
-//ItemPerPage
+// ItemPerPage
 type OptionType = {
   value: string;
   label: string;
@@ -36,41 +36,41 @@ const defaultLimit = "10";
 const API = () => {
   const [data, setData] = useState<PokemonType[]>([]);
   const [limit, setLimit] = useState<string | undefined>("10");
-
   const [activePokemon, setActivePokemon] = useState<
     ActivePokemonType | undefined
   >(undefined);
 
   const getData = async (limit: string | undefined) => {
-    await fetch(
-      `https://pokeapi.co/api/v2/pokemon/?limit=${limit ? limit : defaultLimit}`
-    )
-      .then((data) => {
-        return data.json();
-      })
-      .then((res: PokemonsResponseType) => {
-        setData(res.results);
-      })
-      .catch((err) => {
-        console.log(err);
-      });
+    try {
+      const response = await fetch(
+        `https://pokeapi.co/api/v2/pokemon/?limit=${
+          limit ? limit : defaultLimit
+        }`
+      );
+      const res: PokemonsResponseType = await response.json();
+      setData(res.results);
+    } catch (err) {
+      console.log(err);
+    }
   };
 
   const getPokemonData = async (pokemon: string) => {
-    await fetch(`https://pokeapi.co/api/v2/pokemon/${pokemon}`)
-      .then((data) => {
-        return data.json();
-      })
-      .then((res: ActivePokemonType) => {
-        setActivePokemon(res);
-      })
-      .catch((err) => {
-        console.log(err);
-      });
+    try {
+      const response = await fetch(
+        `https://pokeapi.co/api/v2/pokemon/${pokemon}`
+      );
+      const res: ActivePokemonType = await response.json();
+      setActivePokemon(res);
+    } catch (err) {
+      console.log(err);
+    }
   };
+
   function scrolldiv() {
-    var elem = document.getElementById("pokemon");
-    elem.scrollIntoView();
+    const elem = document.getElementById("pokemon");
+    if (elem) {
+      elem.scrollIntoView();
+    }
   }
 
   useEffect(() => {
@@ -90,7 +90,6 @@ const API = () => {
         <br />
         <Select
           onChange={(e) => {
-            //getData(e?.value);
             setLimit(e?.value);
           }}
           options={options}
@@ -102,21 +101,19 @@ const API = () => {
         </div>
         <br />
         <div>
-          {data.map((pokemon) => {
-            return (
-              <button
-                className="pokebutton"
-                onClick={(e) => {
-                  const test = e.target as HTMLButtonElement;
-                  getPokemonData(test.innerHTML);
-                  scrolldiv();
-                }}
-                key={pokemon.name}
-              >
-                {pokemon.name}
-              </button>
-            );
-          })}
+          {data.map((pokemon) => (
+            <button
+              className="pokebutton"
+              onClick={(e) => {
+                const test = e.currentTarget as HTMLButtonElement;
+                getPokemonData(test.innerHTML);
+                scrolldiv();
+              }}
+              key={pokemon.name}
+            >
+              {pokemon.name}
+            </button>
+          ))}
         </div>
         <div>
           <img
@@ -131,4 +128,5 @@ const API = () => {
     </>
   );
 };
+
 export default API;
