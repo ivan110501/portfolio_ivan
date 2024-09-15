@@ -28,7 +28,7 @@ const data1: ProfileDataType = {
   profileDescription: "I'm a frontend developer based in Osijek.",
   skills: ["HTML", "CSS/SASS", "JS/TS", "React", "Fusion360"],
   experience:
-    "I'm a frontend developer and 3D designer passionate about experiences for web applications. I also enjoy doing 3D design and 3D printing. This site is an example of a web app made by me from scratch. Some of my 3D projects are listed down below. Showcase of my web skills can be found in skills tab on navigation bar ",
+    "I'm a frontend developer and 3D designer passionate about experiences for web applications. I also enjoy doing 3D design and 3D printing. This site is an example of a web app made by me from scratch. Some of my 3D projects are listed down below. ",
   links: {
     github: "https://github.com/ivan110501",
     instagram: "https://www.instagram.com/ivan.antunovic3/",
@@ -70,8 +70,10 @@ const Home = () => {
             <p className="personal__body__p mb-8">{data1.experience}</p>
 
             <div>
-              <h3>Projects</h3>
-
+              <h3>Web Projects</h3>
+              <a href="iantunovic.netlify.app/skills">MINI WEB PROJECTS</a>
+              <br />
+              <h3>CAD design projects</h3>
               <div style={{ display: "flex", marginTop: "10%" }}>
                 <img
                   style={{ width: "50%" }}

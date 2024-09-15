@@ -1,6 +1,8 @@
 export type LinkType = {
   href: string;
   label: string;
+  description: string;
+  img: string;
 };
 
 export type CastType = {
