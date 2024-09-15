@@ -68,6 +68,10 @@ const API = () => {
         console.log(err);
       });
   };
+  function scrolldiv() {
+    var elem = document.getElementById("pokemon");
+    elem.scrollIntoView();
+  }
 
   useEffect(() => {
     getData(limit);
@@ -105,6 +109,7 @@ const API = () => {
                 onClick={(e) => {
                   const test = e.target as HTMLButtonElement;
                   getPokemonData(test.innerHTML);
+                  scrolldiv();
                 }}
                 key={pokemon.name}
               >
@@ -118,6 +123,7 @@ const API = () => {
             style={{ width: "20rem" }}
             src={activePokemon?.sprites.front_default}
             alt=""
+            id="pokemon"
           />
         </div>
       </div>

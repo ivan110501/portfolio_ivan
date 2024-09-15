@@ -1,6 +1,9 @@
 .cars {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
+  @media (max-width: 40em) {
+    grid-template-columns: repeat(1, 1fr);
+  }
   overflow: hidden;
   border-radius: var(--border-rounded);
   font-family: "IBM Plex Sans", sans-serif;
