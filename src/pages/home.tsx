@@ -71,7 +71,9 @@ const Home = () => {
 
             <div>
               <h3>Web Projects</h3>
-              <a href="iantunovic.netlify.app/skills">MINI WEB PROJECTS</a>
+              <a href="https://iantunovic.netlify.app/skills">
+                MINI WEB PROJECTS
+              </a>
               <br />
               <h3>CAD design projects</h3>
               <div style={{ display: "flex", marginTop: "10%" }}>
