@@ -49,7 +49,7 @@ const Skills = () => {
           <div className="skills__box">
             <img
               className="skills__img"
-              src="https://book.git-scm.com/images/logos/downloads/Git-Icon-Black.png"
+              src="https://static-00.iconduck.com/assets.00/git-icon-2048x2048-juzdf1l5.png"
               alt=""
             />
             <span>GIT</span>
